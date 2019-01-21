@@ -2,6 +2,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+    	<app-book *ngIf="loadedFeature == 'books'"></app-book>
+    	<app-shelves *ngIf="loadedFeature == 'shelves'"></app-shelves>
+    	<hr>
     </div>
   </div>
 

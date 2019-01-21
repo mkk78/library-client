@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-xs-12">
+		<button class="btn btn-success">New Shelf</button>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-xs-4" *ngFor="let shelf of shelves" (click)="selectedShelf = shelf">
+		<a href="#" class="list-group-item clearfix">
+        	<div class="pull-left">
+        		<h4 class="list-group-item-heading">Shelf {{shelf.shelfId}}</h4>
+        		<p class="list-group-item-text">{{shelf.currentCapacity}} / {{shelf.maxCapacity}}</p>
+        		<p class="list-group-item-text">
+        			Books:
+        		</p>
+        		<p class="list-group-item-text" *ngFor="let book of shelf.books">
+        			{{book.id}}
+        		</p>
+        	</div>
+		</a>
+		<br>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-3">
+		<button class="btn btn-success" (click)="onGetAllShelves()">Get All Shelves</button>
+	</div>
+	<div class="col-xs-3">
+		<button class="btn btn-success" (click)="onAddBook()">Add Book Test</button>
+	</div>
+	<div class="col-xs-3">
+		<button class="btn btn-success" (click)="onRemoveBook()">Remove Book Test</button>
+	</div>
+</div>
+
+<app-shelf-detail *ngIf="selectedShelf; else infoText" [shelf]="selectedShelf"></app-shelf-detail>
+<ng-template #infoText>
+	<p>Please select a Shelf!</p>
+</ng-template>

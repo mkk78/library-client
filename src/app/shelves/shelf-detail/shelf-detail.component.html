@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-xs-12">
+		<h1>Shelf {{shelf.shelfId}}</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		Current Capacity
+	</div>
+	<div class="col-xs-6">
+		{{shelf.currentCapacity}}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		Max Capacity
+	</div>
+	<div class="col-xs-6">
+		{{shelf.maxCapacity}}
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		Book:
+	</div>
+</div>
+<div class="row" *ngFor="let book of shelf.books">
+	<div class="col-xs-12">
+		{{book.title}}
+	</div>
+</div>
