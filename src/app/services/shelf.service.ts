@@ -9,19 +9,21 @@ export class ShelfService {
 
   constructor(private httpClient: HttpClient) { }
 
+  baseUrl = 'http://localhost:8080/';
+
   getAllShelves() {
-  	return this.httpClient.get('http://localhost:8080/get-all-shelves');
+  	return this.httpClient.get(this.baseUrl + 'get-all-shelves');
   }
 
   getShelfById(id: number) {
-  	return this.httpClient.get('http://localhost:8080/get-shelf?id='+id);
+  	return this.httpClient.get(this.baseUrl + 'get-shelf?id='+id);
   }
 
   addBook(bookId: number, shelfId: number) {
-  	return this.httpClient.get('http://localhost:8080/add-book?bookid='+bookId+'&shelfid='+shelfId);
+  	return this.httpClient.get(this.baseUrl + 'add-book?bookid='+bookId+'&shelfid='+shelfId);
   }
 
   removeBook(bookId: number, shelfId: number) {
-  	return this.httpClient.get('http://localhost:8080/remove-book?bookid='+bookId+'&shelfid='+shelfId);
+  	return this.httpClient.get(this.baseUrl + 'remove-book?bookid='+bookId+'&shelfid='+shelfId);
   }
 }

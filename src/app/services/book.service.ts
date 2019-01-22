@@ -7,12 +7,12 @@ import { Book } from '../model/book.model';
 @Injectable()
 export class BookService {
 	constructor(private httpClient:HttpClient) {}
-
+	baseUrl = 'http://localhost:8080/';
 	getDummyBook() {
-		return this.httpClient.get('http://localhost:8080/dummy-book');
+		return this.httpClient.get(this.baseUrl + 'dummy-book');
 	}
 
 	getAllBook() {
-		return this.httpClient.get('http://localhost:8080/get-all-book');
+		return this.httpClient.get<Book[]>(this.baseUrl + 'get-all-book');
 	}
 }
