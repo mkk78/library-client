@@ -32,20 +32,24 @@ export class ShelvesComponent implements OnInit {
   onAddBook() {
   	this.shelfService.addBook(11, 1)
   	.subscribe(
-  		(data: any[]) => {
-  			this.shelves = data;
+  		(data: any) => {
+			  this.selectedShelf = data;
+			  this.onGetAllShelves();
   		},
   		(error) => console.log(error)
-  	);
+	  );
+	  
   }
 
   onRemoveBook() {
   	this.shelfService.removeBook(11,1)
   	.subscribe(
-  		(data: any[]) => {
-  			this.shelves = data;
+  		(data: any) => {
+			  this.selectedShelf = data;
+			  this.onGetAllShelves();
   		},
-  		(error) => console.log(error));
+		(error) => console.log(error)
+	);
   }
 
 }

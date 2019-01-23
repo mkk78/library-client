@@ -10,7 +10,19 @@ export class AppPage {
     }
 
     getAllBooksCount() {
-        return element.all(by.css('app-root h4')).count();
+        return element.all(by.css('app-book h4')).count();
+    }
+
+    getAllShelvesCount() {
+        return element.all(by.css('app-shelves h4')).count();
+    }
+
+    getButton(button) {
+        return element(by.linkText(button));
+    }
+
+    getShelvesTitleText() {
+        return element(by.css('app-shelves h1')).getText();
     }
 }
 

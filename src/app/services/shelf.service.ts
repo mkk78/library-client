@@ -4,7 +4,7 @@ import 'rxjs/Rx';
 
 @Injectable({
   providedIn: 'root'
-})
+})  
 export class ShelfService {
 
   constructor(private httpClient: HttpClient) { }
