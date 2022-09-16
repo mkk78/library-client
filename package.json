@@ -22,7 +22,7 @@
     "@angular/router": "~7.1.0",
     "@types/chai": "^4.1.7",
     "@types/cucumber": "^4.0.4",
-    "bootstrap": "^3.4.0",
+    "bootstrap": "^3.4.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.3.3",
